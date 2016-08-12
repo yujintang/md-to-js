@@ -29,7 +29,7 @@ module.exports = {
         return promise.all(arr)
             .then(function (result) {
                 for(let i of result) {
-                    let fileName = (/(?:[\w\W]*\/([^/.]*).[\w\W]+)/.exec(i[1]))[1];
+                    let fileName = path.basename(i[1], '.md');
                     let url = jsfile + fileName + '.js';
                     file.writeJs(url, i[0]);
                 }
