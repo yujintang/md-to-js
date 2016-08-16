@@ -4,7 +4,6 @@ var fs = require('fs');
 var promise = require('bluebird');
 var path = require('path');
 
-
 module.exports = {
     transMd: file.transMd,
     writeJs: file.writeJs,
