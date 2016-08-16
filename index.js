@@ -12,33 +12,27 @@ module.exports = {
 
     all: function (mdfile, jsfile) {
 
-        let mdStat = fs.lstatSync(mdfile);
-        let jsStat = fs.lstatSync(jsfile);
+        if(!jsfile) {
+            jsfile = './js_file/';
+            if (!fs.existsSync(jsfile)) {
+                fs.mkdirSync(jsfile);
+            }
+        }
 
         let arr = [];
-
-        if(!jsStat.isDirectory()) {
-            console.log('jsfile参数必须为文件夹');
-            process.exit(1);
-        }
-
-        if(!mdStat.isDirectory()) {
-            if(/[\w\W]+\.md$/.test(mdfile)) {
-                arr.push(file.transMd(mdfile));
+        
+        
+           if(/[\w\W]+\.md$/.test(mdfile)) {
+            arr.push(file.transMd(mdfile));
             } else {
-                console.log('mffile参数必须为文件夹或.md 文件')
-            }
-        } else {
-            let redDir = fs.readdirSync(mdfile);
-
-            for (let i of redDir) {
-                if(/[\w\W]+\.md/.test(i)) {
-                    let url = path.join(mdfile, i);
-                    arr.push(file.transMd(url));
-                }
-            }
-
-        }
+               let redDir = fs.readdirSync(mdfile);
+               for (let i of redDir) {
+                   if (/[\w\W]+\.md/.test(i)) {
+                       let url = path.join(mdfile, i);
+                       arr.push(file.transMd(url));
+                   }
+               }
+           }
         
         return promise.all(arr)
             .then(function (result) {

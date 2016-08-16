@@ -24,9 +24,10 @@ mj.writeJs(url, arr);
 mj.all(mdfile, jsfile);
 ````
 - mdfile 参数可以为文件夹,也可以为.md 文件 jsfile 必须为文件夹
+- jsfile 参数可以忽略,默认添加在'./js_file/' 下
 
 ###  生成md文件格式
 ````
-mj.creatMd(url);
+mj.createMd(url);
 ````
 - url 参数必须为 .md 的文件
