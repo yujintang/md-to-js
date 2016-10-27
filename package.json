@@ -1,12 +1,12 @@
 {
   "name": "md-to-js",
-  "version": "1.0.9",
-  "description": "",
+  "version": "1.0.11",
+  "description": "内部专用",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "yujintang <shanquan54@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.4.1",

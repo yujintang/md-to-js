@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+"use strict";
+var path = require('path');
+var fs = require('fs');
+var md2js = require('../index').all;
+
+let output = path.resolve(process.cwd(), './output/');
+let js_file = path.resolve(output, './js_file');
+let mock_file = path.resolve(js_file, './mock');
+let md_file = path.resolve(output, './md_file');
+
+if (!fs.existsSync(output)) {
+    fs.mkdirSync(output);
+}
+
+if (!fs.existsSync(js_file)) {
+    fs.mkdirSync(js_file);
+}
+
+if (!fs.existsSync(mock_file)) {
+    fs.mkdirSync(mock_file);
+}
+
+if (!fs.existsSync(md_file)) {
+    fs.mkdirSync(md_file);
+}
+
+
+md2js(path.resolve(process.cwd(), './output/md_file/'), path.resolve(process.cwd(), './output/js_file/'));
