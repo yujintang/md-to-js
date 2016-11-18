@@ -1,6 +1,6 @@
 {
   "name": "md-to-js",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "内部专用",
   "main": "index.js",
   "scripts": {
