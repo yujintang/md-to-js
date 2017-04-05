@@ -1,0 +1,112 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@4.1.2
+3 info using node@v7.6.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/yujintang/work/my_item/md-to-js',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/yujintang/.npm/md-to-js/1.1.7/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/yujintang/.npm correctMkdir not in flight; initializing
+10 info lifecycle md-to-js@1.1.7~prepublish: md-to-js@1.1.7
+11 silly lifecycle md-to-js@1.1.7~prepublish: no script for prepublish, continuing
+12 info lifecycle md-to-js@1.1.7~prepare: md-to-js@1.1.7
+13 silly lifecycle md-to-js@1.1.7~prepare: no script for prepare, continuing
+14 verbose tar pack [ '/Users/yujintang/.npm/md-to-js/1.1.7/package.tgz',
+14 verbose tar pack   '/Users/yujintang/work/my_item/md-to-js' ]
+15 verbose tarball /Users/yujintang/.npm/md-to-js/1.1.7/package.tgz
+16 verbose folder /Users/yujintang/work/my_item/md-to-js
+17 verbose addLocalTarball adding from inside cache /Users/yujintang/.npm/md-to-js/1.1.7/package.tgz
+18 verbose correctMkdir /Users/yujintang/.npm correctMkdir not in flight; initializing
+19 silly cache afterAdd md-to-js@1.1.7
+20 verbose afterAdd /Users/yujintang/.npm/md-to-js/1.1.7/package/package.json not in flight; writing
+21 verbose correctMkdir /Users/yujintang/.npm correctMkdir not in flight; initializing
+22 verbose afterAdd /Users/yujintang/.npm/md-to-js/1.1.7/package/package.json written
+23 silly publish { name: 'md-to-js',
+23 silly publish   version: '1.1.7',
+23 silly publish   description: 'markdown文档转换为js代码',
+23 silly publish   main: 'index.js',
+23 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+23 silly publish   bin: { createMd: './bin/createMd', md2js: './bin/md2js' },
+23 silly publish   author: { name: 'yujintang', email: 'shanquan54@gmail.com' },
+23 silly publish   license: 'ISC',
+23 silly publish   repository:
+23 silly publish    { type: 'git',
+23 silly publish      url: 'git+https://github.com/yujintang/md-to-js.git' },
+23 silly publish   dependencies: { bluebird: '^3.4.1', chalk: '^1.1.3', 'line-by-line': '^0.1.5' },
+23 silly publish   readme: '# 使用markdown 生成js代码\n\n## **shell用法:**\n\n## 公司内部专用\n\n下载:\n```shell\nnpm install md-to-js\ncd md-to-js\nnpm link\n```\n\n## 使用bin下脚本自动生成\n- 生成的内容放在服务运行目录下的output目录下\n- 生成output目录结构\n```\n├── output\n│   ├── js_file                     #生成js文件位置\n│   │   ├── demo.js\n│   │   └── mock                    #生成mock数据位置\n│   │       ├── api1.js\n│   │       ├── api2.js\n│   │       └── orderSearch.js\n│   └── md_file                     #存放markdown文件位置\n│       └── demo.md\n```\n\n###  生成md规范示例文件 demo.md\n```shell\n createMd  \n```\n- 该文件生成于./output/md_file/文件夹下\n\n###  生成mock数据以及js代码 \n```shell\nmd2js\n```\n- 请将要生成的API markdown文件存放于 ./output/md_file/目录下\n- API 对应生成的js文件与 mock 文件分别位于 ./output/下的对应文件夹内\n\n\n## **js用法**\n\n### 生成md规范示例文件\n```javascript\nlet mj = require(\'md-to-js\');\nmj.createMd(\'./demo.md\');\n```\n- 在当前目录下生成demo.md markdown文件\n\n\n### md直接生成js文件\n```javascript\nlet mj = require(\'md-to-js\');\nmj.all(mdfile, jsfile);\n```\n- mdfile 为存放API的文件或文件夹 \n- jsfile 选填参数，存放生成的js文件存放的位置，必须为文件夹， 默认存放于 ./output/js_file/ 目录下\n\n',
+23 silly publish   readmeFilename: 'README.md',
+23 silly publish   gitHead: 'e894747604a8b8ee678901c14033755db515534a',
+23 silly publish   bugs: { url: 'https://github.com/yujintang/md-to-js/issues' },
+23 silly publish   homepage: 'https://github.com/yujintang/md-to-js#readme',
+23 silly publish   _id: 'md-to-js@1.1.7',
+23 silly publish   _shasum: '84c37552645e2b073e0fd33707345be997ece8ab',
+23 silly publish   _from: '.' }
+24 info lifecycle md-to-js@1.1.7~prepublishOnly: md-to-js@1.1.7
+25 silly lifecycle md-to-js@1.1.7~prepublishOnly: no script for prepublishOnly, continuing
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name md-to-js
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry data Result {
+30 silly mapToRegistry   raw: 'md-to-js',
+30 silly mapToRegistry   scope: null,
+30 silly mapToRegistry   escapedName: 'md-to-js',
+30 silly mapToRegistry   name: 'md-to-js',
+30 silly mapToRegistry   rawSpec: '',
+30 silly mapToRegistry   spec: 'latest',
+30 silly mapToRegistry   type: 'tag' }
+31 silly mapToRegistry uri https://registry.npmjs.org/md-to-js
+32 verbose publish registryBase https://registry.npmjs.org/
+33 silly publish uploading /Users/yujintang/.npm/md-to-js/1.1.7/package.tgz
+34 verbose request uri https://registry.npmjs.org/md-to-js
+35 verbose request sending authorization for write operation
+36 info attempt registry request try #1 at 3:49:50 PM
+37 verbose request using bearer token for auth
+38 verbose request id 08da3d8b3b28879d
+39 http request PUT https://registry.npmjs.org/md-to-js
+40 http 403 https://registry.npmjs.org/md-to-js
+41 verbose headers { 'content-type': 'application/json',
+41 verbose headers   'cache-control': 'max-age=300',
+41 verbose headers   'content-length': '95',
+41 verbose headers   'accept-ranges': 'bytes',
+41 verbose headers   date: 'Fri, 31 Mar 2017 07:50:39 GMT',
+41 verbose headers   via: '1.1 varnish',
+41 verbose headers   connection: 'keep-alive',
+41 verbose headers   'x-served-by': 'cache-nrt6135-NRT',
+41 verbose headers   'x-cache': 'MISS',
+41 verbose headers   'x-cache-hits': '0',
+41 verbose headers   'x-timer': 'S1490946639.014160,VS0,VE365',
+41 verbose headers   vary: 'Accept-Encoding' }
+42 verbose request invalidating /Users/yujintang/.npm/registry.npmjs.org/md-to-js on PUT
+43 error publish Failed PUT 403
+44 verbose stack Error: "You cannot publish over the previously published version 1.1.7." : md-to-js
+44 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:304:12)
+44 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:292:14)
+44 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:212:14)
+44 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:186:22)
+44 verbose stack     at emitTwo (events.js:106:13)
+44 verbose stack     at Request.emit (events.js:192:7)
+44 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1081:10)
+44 verbose stack     at emitOne (events.js:96:13)
+44 verbose stack     at Request.emit (events.js:189:7)
+44 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1001:12)
+45 verbose statusCode 403
+46 verbose pkgid md-to-js
+47 verbose cwd /Users/yujintang/work/my_item/md-to-js
+48 error Darwin 16.3.0
+49 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+50 error node v7.6.0
+51 error npm  v4.1.2
+52 error code E403
+53 error "You cannot publish over the previously published version 1.1.7." : md-to-js
+54 error If you need help, you may report this error at:
+54 error     <https://github.com/npm/npm/issues>
+55 verbose exit [ 1, true ]
