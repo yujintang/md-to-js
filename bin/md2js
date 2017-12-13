@@ -1,29 +1,50 @@
 #!/usr/bin/env node
 
 "use strict";
-var path = require('path');
-var fs = require('fs');
-var md2js = require('../index').all;
 
-let output = path.resolve(process.cwd(), './output/');
-let js_file = path.resolve(output, './js_file');
-let mock_file = path.resolve(js_file, './mock');
-let md_file = path.resolve(output, './md_file');
+const program = require('commander'),
+    md2js = require('../index'),
+    PKG = require('../package.json');
 
-if (!fs.existsSync(output)) {
-    fs.mkdirSync(output);
+program
+    .version(PKG.version);
+
+program
+    .command('createMd [target_path]')
+    .alias('md')
+    .description('create a new markdown demo to <target_path>')
+    .action(function (md_file) {
+        md2js.createMd(md_file)
+    });
+
+program
+    .command('createJs [mddir] [target_path]')
+    .alias('js')
+    .description('generate action script from [mddir] and save to [target_path]')
+    .action(function (mddir, target_path) {
+        md2js.createJs(mddir, target_path)
+    });
+
+program
+    .command('createMock [mddir] [target_path]')
+    .alias('mock')
+    .description('generate mock.js from [mddir] and save to [target_path]')
+    .action(function (mddir, target_path) {
+        md2js.createMock(mddir, target_path)
+    });
+
+program
+    .command('createJson [mddir] [target_path]')
+    .alias('json')
+    .description('generate postman.json file from [mddir] and save to [target_path]')
+    .action(function (mddir, target_path) {
+        md2js.createJson(mddir, target_path)
+    });
+
+program
+    .parse(process.argv);
+
+
+if (process.argv.length === 2) {
+    program.outputHelp();
 }
-
-if (!fs.existsSync(js_file)) {
-    fs.mkdirSync(js_file);
-}
-
-if (!fs.existsSync(mock_file)) {
-    fs.mkdirSync(mock_file);
-}
-
-if (!fs.existsSync(md_file)) {
-    fs.mkdirSync(md_file);
-}
-
-md2js(path.resolve(process.cwd(), './output/md_file/'), path.resolve(process.cwd(), './output/js_file/'));
