@@ -4,8 +4,8 @@
 
 下载:
 ```shell
-npm install md-to-js
-cd md-to-js
+npm install md2js
+cd md2js
 npm link
 ```
 
@@ -18,7 +18,7 @@ md2js --help
 
 ### 生成md规范示例文件
 ```javascript
-let md2js = require('md-to-js');
+let md2js = require('md2js');
 
 md2js.createMd(md_file);
 md2js.createJs(md_file, js_file);
