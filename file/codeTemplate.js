@@ -36,10 +36,14 @@ module.exports = function (dbo) {
         return `
     /**
      * ${option.name}
+     * @see {@link ${option.mockUrl}|Mock数据}
+     * @param {Object} req - 请求参数
 ${option.paramsTags}
+     * @param {Object} res - 返回参数
+${option.resParamsTags}
      */
     this.${option.url[3]}${option.method} = async (req, res) => {
-        let myRes = {};
+        const myRes = {};
         try {
             let session = req.session,
                 my_user_id = _.get(session, 'active_user.user_id'),

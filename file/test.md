@@ -7,7 +7,7 @@
 - postman上，请将saas_url 设置 为对应地址
 
 ##### Url
-```javascript
+```http
 {{saas_url}}/b/auth/syslogin
 ```
 
@@ -30,6 +30,10 @@ POST
   "msg":"成功!"
 }
 ```
+##### MockUrl
+```http
+http://iot.kmlab.com
+```
 
 ##### Response
 | name |  code   |  type  | must | note |
@@ -44,7 +48,7 @@ POST
 - 这是一个GET接口
 
 ##### Url
-```javascript
+```http
 {{test_url}}/b/corp/corpList
 ```
 
@@ -65,6 +69,10 @@ GET
   "ret":"OK",
   "msg":"成功!"
 }
+```
+##### MockUrl
+```http
+http://iot.kmlab.com
 ```
 
 ##### Response

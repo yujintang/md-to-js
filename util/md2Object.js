@@ -20,6 +20,7 @@ module.exports = function (js_file) {
             url: apiObject.url[0].split(path.sep),
             method: apiObject.method[0].substr(0, 1).toUpperCase() + apiObject.method[0].substr(1).toLowerCase(),
             mock: apiObject.mock[0],
+            mockUrl: apiObject.mockurl[0],
             note: _.map(apiObject.note, (v, id) => {
                 let number = id + 1;
                 return `(${number}): ${v}`;
